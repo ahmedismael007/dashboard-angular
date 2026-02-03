@@ -1,3 +1,74 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'tailwindcss';
+@import 'primeng';
+@import 'tailwindcss-primeui';
 
-@import "tailwindcss";
+@theme {
+  --color-primary: #ffcc00;
+  --color-text-muted: #6c757d;
+}
+
+@font-face {
+  font-family: 'Cairo';
+  src: url('/fonts/Cairo-Regular.woff2') format('woff2');
+  font-display: swap;
+}
+
+body {
+  font-family: 'Cairo', sans-serif;
+  /* background-color: #eceff1; */
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  filter: blur(100px);
+  opacity: 0.2;
+  z-index: -1;
+  pointer-events: none;
+  mix-blend-mode: soft-light;
+  top: 0;
+  right: 0;
+  background-image: linear-gradient(
+    var(--color-primary) 0%,
+    rgba(153, 122, 0, 0.4) 40%,
+    transparent 60%
+  );
+}
+
+.p-button {
+  background: linear-gradient(180deg, var(--color-primary), #ffd633) !important;
+  color: #000 !important;
+  border-color: var(--color-primary) !important;
+}
+
+.p-button:hover {
+  background: linear-gradient(360deg, var(--color-primary), #ffd633) !important;
+}
+
+.p-button.p-button-outlined {
+  background: transparent !important;
+  color: var(--color-primary) !important;
+}
+:root {
+  --body-bg: var(--p-surface-50);
+  --body-text-color: var(--p-surface-900);
+  --card-border: 1px solid var(--border-color);
+  --card-bg: var(--p-surface-0);
+  --border-color: var(--p-surface-200);
+  --text-color: var(--p-surface-700);
+  --overlay-background: #ffffff;
+}
+
+:root[class='dark-mode'] {
+  --body-bg: var(--p-surface-950);
+  --body-text-color: var(--p-surface-50);
+  --card-border: 1px solid transparent;
+  --card-bg: var(--p-surface-900);
+  --border-color: rgba(255, 255, 255, 0.1);
+  --text-color: var(--p-surface-0);
+  --overlay-background: var(--p-surface-900);
+}

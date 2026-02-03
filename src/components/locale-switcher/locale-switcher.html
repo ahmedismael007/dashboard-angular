@@ -1,0 +1,7 @@
+<p-button
+  outlined
+  icon="pi pi-globe"
+  [label]="currentLocaleLabel"
+  (onClick)="menu.toggle($event)"
+/>
+<p-menu #menu [model]="localesMenu" [popup]="true" />

@@ -1,0 +1,44 @@
+<div class="grid grid-cols-1 md:grid-cols-2 h-screen overflow-auto md:overflow-hidden">
+  <div class="p-5">
+    <div class="flex gap-3"><app-locale-switcher /> <app-mode-switcher /></div>
+    <div class="flex justify-center items-center h-full">
+      <div class="w-full grid grid-cols-1 gap-5 md:w-3/4">
+        <div class="flex justify-center items-center">
+          <app-logo />
+        </div>
+        <h3 class="text-2xl text-center" i18n="@@welcome_back">Welcome Back!</h3>
+        <p class="text-center text-text-muted mb-5" i18n="@@login_description">
+          Log in to keep your workflow smooth and perform at your best.
+        </p>
+        <app-login-form></app-login-form>
+        <div class="flex justify-center items-center text-center gap-2">
+          <p i18n="@@dont_have_an_account">Don't have an account?</p>
+          <a routerLink="/getting-started/personal-info">
+            <p class="text-primary hover:text-primary/50" i18n="@@register_now">
+              Create New Account
+            </p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="hidden md:block relative overflow-hidden">
+    <img ngSrc="/images/auth/auth.webp" alt="auth" fill class="object-fill w-full h-full z-0" />
+    <div
+      class="absolute top-0 left-0 inset-0 w-full h-full bg-linear-to-t from-black/90 via-black/40 to-transparent backdrop-blur-sm z-10"
+    ></div>
+    <div
+      class="absolute top-0 left-0 w-full h-full z-50 text-center flex justify-center items-center"
+    >
+      <div class="w-3/4 flex flex-col gap-5 justify-center items-center">
+        <app-logo />
+        <h3 i18n="@@app_title" class="text-white text-3xl">CEO App</h3>
+        <p i18n="@@app_description" class="text-gray-300">
+          An integrated platform that brings together accounting, human resources management, and
+          project management in one place. Designed to help you organize your business, track your
+          team, and achieve your goals efficiently and professionally.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
